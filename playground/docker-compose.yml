@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  golang:
+    image: golang:latest
+    container_name: golang
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes: 
+      - ../../golang:/go/src
+  
+  rust:
+    image: rust:latest
+    container_name: rust
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes: 
+      - ../../rust:/var
+  
+  infersharp:
+    image: mcr.microsoft.com/infersharp:latest
+    container_name: infersharp
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../../infersharp:/var
